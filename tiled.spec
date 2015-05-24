@@ -102,7 +102,7 @@ find -name ".uic" -or -name ".moc" -or -name ".rcc" | xargs rm -rf
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 # Appdata
-install -D -p -m644 docs/%{name}.appdata.xml %{buildroot}/%{_datadir}/appdata/%{name}.appdata.xml
+install -D -p -m644 %{name}.appdata.xml %{buildroot}/%{_datadir}/appdata/%{name}.appdata.xml
 appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/*.appdata.xml
 
 # locale files
